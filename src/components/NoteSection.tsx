@@ -11,8 +11,8 @@ const noteLines = [
     "The way I spoke to you was wrong. The tone I used, the words I chose — they weren't fair, and they weren't kind. You deserved better, and I failed you in that moment.",
     "I am not writing this to explain it away. I'm writing because I want you to know that I see it clearly, and I take full responsibility.",
     "I won't repeat it again.",
-    "You mean far more to me than any moment of frustration ever should. [Our little phrase] — and I mean that with everything I have.",
-    "If you need time, I understand.",
+    "You mean far more to me than any moment of frustration ever should — and I mean that with everything I have.",
+
 ];
 
 const lineVariant = {
