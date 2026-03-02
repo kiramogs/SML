@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap");
+@import "tailwindcss";
+
+/* ── Design tokens ── */
+:root {
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+
+  --midnight: #070b14;
+  --deep-navy: #0c1222;
+  --ink: #111827;
+  --teal-soft: #5eead4;
+  --teal-muted: #2dd4bf;
+  --lavender: #a78bfa;
+  --lavender-muted: #8b5cf6;
+  --amber-warm: #fbbf24;
+  --amber-soft: #d4a053;
+  --ivory: #f5f0e8;
+  --ivory-dim: rgba(245, 240, 232, 0.7);
+  --ivory-faint: rgba(245, 240, 232, 0.4);
+  --ivory-ghost: rgba(245, 240, 232, 0.15);
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--midnight);
+  color: var(--ivory);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── Night sky background ── */
+.night-sky {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(ellipse at 50% 0%, #0f1b2e 0%, var(--midnight) 60%, #050810 100%);
+}
+
+/* ── Aurora ribbons ── */
+.aurora-container {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.45;
+}
+
+.aurora-ribbon {
+  position: absolute;
+  width: 140%;
+  height: 300px;
+  left: -20%;
+  filter: blur(60px);
+  animation: auroraWave 18s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+.aurora-ribbon:nth-child(1) {
+  top: -8%;
+  background: linear-gradient(90deg, transparent 0%, rgba(94, 234, 212, 0.25) 30%, rgba(139, 92, 246, 0.2) 60%, transparent 100%);
+  animation-duration: 22s;
+}
+
+.aurora-ribbon:nth-child(2) {
+  top: 5%;
+  background: linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, 0.15) 40%, rgba(251, 191, 36, 0.08) 70%, transparent 100%);
+  animation-duration: 28s;
+  animation-delay: -6s;
+}
+
+.aurora-ribbon:nth-child(3) {
+  top: -2%;
+  background: linear-gradient(90deg, transparent 10%, rgba(94, 234, 212, 0.12) 50%, rgba(167, 139, 250, 0.1) 80%, transparent 100%);
+  animation-duration: 25s;
+  animation-delay: -12s;
+}
+
+@keyframes auroraWave {
+
+  0%,
+  100% {
+    transform: translateX(-5%) scaleY(1);
+    opacity: 0.6;
+  }
+
+  33% {
+    transform: translateX(3%) scaleY(1.3);
+    opacity: 1;
+  }
+
+  66% {
+    transform: translateX(-2%) scaleY(0.8);
+    opacity: 0.7;
+  }
+}
+
+/* ── Star field ── */
+.stars-container {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--ivory);
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.4);
+  }
+}
+
+/* ── Content wrapper ── */
+.content-layer {
+  position: relative;
+  z-index: 10;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(94, 234, 212, 0.15);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(94, 234, 212, 0.3);
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(94, 234, 212, 0.2);
+  color: var(--ivory);
+}
+
+/* ── Noise overlay ── */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .aurora-ribbon {
+    animation: none !important;
+  }
+
+  .star {
+    animation: none !important;
+    opacity: 0.3;
+  }
+}
