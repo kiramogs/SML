@@ -251,7 +251,7 @@ export default function NoteSection() {
                                 }}
                             >
                                 <TypeAnimation
-                                    sequence={["\"I choose kindness in my words — always.\""]}
+                                    sequence={["\"I love you more than anything my LOVE\""]}
                                     speed={50}
                                     cursor={false}
                                 />
