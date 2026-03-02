@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
-import { useState } from "react";
+
 
 function scrollTo(id: string) {
     const el = document.getElementById(id);
@@ -22,28 +21,10 @@ const fadeUp = {
 };
 
 export default function HeroSection() {
-    const [typewriterDone, setTypewriterDone] = useState(false);
 
     return (
         <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-6">
             <motion.div variants={stagger} initial="hidden" animate="visible" className="text-center max-w-2xl">
-
-                {/* Tagline - typewriter style */}
-                <motion.div variants={fadeUp} className="mb-6">
-                    <TypeAnimation
-                        sequence={[600, "written under the stars", 500, () => setTypewriterDone(true)]}
-                        speed={40}
-                        cursor={true}
-                        style={{
-                            fontFamily: "var(--font-body)",
-                            fontSize: "0.72rem",
-                            letterSpacing: "0.4em",
-                            textTransform: "uppercase",
-                            color: "rgba(94,234,212,0.5)",
-                            display: "inline-block",
-                        }}
-                    />
-                </motion.div>
 
                 {/* Headline */}
                 <motion.h1

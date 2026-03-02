@@ -3,10 +3,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "For You, Nandini",
-  description: "A heartfelt message, written under the stars.",
+  description: "A heartfelt message for Nandini.",
   openGraph: {
     title: "For You, Nandini",
-    description: "A heartfelt message, written under the stars.",
+    description: "A heartfelt message for Nandini.",
   },
 };
 

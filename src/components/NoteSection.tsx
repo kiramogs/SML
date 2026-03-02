@@ -169,7 +169,7 @@ export default function NoteSection() {
                                     fontStyle: "italic", fontWeight: 400,
                                     color: "var(--ivory-faint)",
                                 }}>
-                                    — [Your Name]
+                                    — Arman
                                 </p>
                                 <p style={{
                                     fontFamily: "var(--font-body)",

@@ -44,7 +44,7 @@ async function sendEmail(feeling: string, message: string) {
           </div>
         </div>
         <div style="border-top: 1px solid rgba(94,234,212,0.08); padding-top: 16px;">
-          <p style="font-size: 12px; color: rgba(245,240,232,0.2); margin: 0; text-align: center;">written under the stars ✦ for Nandini</p>
+          <p style="font-size: 12px; color: rgba(245,240,232,0.2); margin: 0; text-align: center;">✦ for Nandini</p>
         </div>
       </div>
     </div>

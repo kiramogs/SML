@@ -25,13 +25,7 @@ export default function Home() {
 
         <ResponseSection />
 
-        <footer style={{
-          padding: "3rem 2rem", textAlign: "center",
-          fontFamily: "var(--font-body)", fontSize: "0.68rem",
-          letterSpacing: "0.2em", color: "rgba(245,240,232,0.12)",
-        }}>
-          written under the stars ✦ for Nandini
-        </footer>
+
       </main>
     </SmoothScroll>
   );
